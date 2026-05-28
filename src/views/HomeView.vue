@@ -18,7 +18,10 @@
       seu tempo é valorizado e sua experiência bancária se torna muito 
       mais eficiente.
     </p>
-    <a href="#servicos" class="btn-primary">Agendar Atendimento</a>
+    <router-link to="/contatos" class="btn-primary">
+  Agendar Atendimento
+</router-link>
+
   </div>
 </section>
 
@@ -29,5 +32,5 @@
  </script>
 
 <style scoped lang="scss">
-
+   @use '../styles/homeView.scss';
 </style>

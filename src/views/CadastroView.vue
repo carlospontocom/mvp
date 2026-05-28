@@ -185,6 +185,6 @@ const handleCadastro = async (): Promise<void> => {
 }
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss" scoped>
+  @use '../styles/cadastroView.scss';
 </style>
