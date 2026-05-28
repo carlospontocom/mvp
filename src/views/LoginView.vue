@@ -4,32 +4,39 @@
       <div class="login-card">
         <h1>Login</h1>
         <p>Faça login em sua conta</p>
-        
+
+        <!-- Mensagem de erro -->
+        <div v-if="errorMessage" class="error-alert">
+          {{ errorMessage }}
+        </div>
+
         <form @submit.prevent="handleLogin" class="login-form">
           <div class="form-group">
             <label for="email">Email:</label>
-            <input 
-              type="email" 
-              id="email" 
-              v-model="loginForm.email" 
-              required 
+            <input
+              type="email"
+              id="email"
+              v-model="loginForm.email"
+              required
               class="form-input"
               placeholder="seu@email.com"
+              :disabled="isLoading"
             >
           </div>
-          
+
           <div class="form-group">
             <label for="password">Senha:</label>
-            <input 
-              type="password" 
-              id="password" 
-              v-model="loginForm.password" 
-              required 
+            <input
+              type="password"
+              id="password"
+              v-model="loginForm.password"
+              required
               class="form-input"
               placeholder="Sua senha"
+              :disabled="isLoading"
             >
           </div>
-          
+
           <div class="form-options">
             <label class="checkbox-label">
               <input type="checkbox" v-model="loginForm.rememberMe">
@@ -38,15 +45,15 @@
             </label>
             <a href="#" class="forgot-link">Esqueceu a senha?</a>
           </div>
-          
+
           <button type="submit" class="login-btn" :disabled="isLoading">
             <span v-if="isLoading">Entrando...</span>
             <span v-else>Entrar</span>
           </button>
         </form>
-        
+
         <div class="signup-link">
-          <p>Não tem uma conta? 
+          <p>Não tem uma conta?
             <router-link to="/cadastro" class="link">
               Cadastre-se aqui
             </router-link>
@@ -60,6 +67,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { loginUsuario, salvarToken } from '../services/AuthService'
 
 interface LoginForm {
   email: string
@@ -69,6 +77,7 @@ interface LoginForm {
 
 const router = useRouter()
 const isLoading = ref<boolean>(false)
+const errorMessage = ref<string>('')
 
 const loginForm = ref<LoginForm>({
   email: '',
@@ -78,18 +87,37 @@ const loginForm = ref<LoginForm>({
 
 const handleLogin = async (): Promise<void> => {
   isLoading.value = true
-  
-  // Simular chamada de API
-  setTimeout(() => {
-    alert(`Login realizado com sucesso!\nEmail: ${loginForm.value.email}`)
-    isLoading.value = false
-    
-    // Redirecionar para home após login
+  errorMessage.value = ''
+
+  try {
+    const data = await loginUsuario({
+      email: loginForm.value.email,
+      senha: loginForm.value.password  // mapeia 'password' → 'senha' que o backend espera
+    })
+
+    salvarToken(data.token, loginForm.value.rememberMe)
+
     router.push('/')
-  }, 1500)
+  } catch (error) {
+    errorMessage.value = error instanceof Error
+      ? error.message
+      : 'Erro inesperado. Tente novamente.'
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
 
 <style scoped lang="scss">
 @use '../styles/loginViews.scss';
+
+.error-alert {
+  background-color: #fdecea;
+  color: #b00020;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
 </style>
