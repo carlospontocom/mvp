@@ -91,5 +91,5 @@ const handleLogin = async (): Promise<void> => {
 </script>
 
 <style scoped lang="scss">
-@use '../styles/views/login.scss';
+
 </style>

@@ -105,5 +105,5 @@ const submitForm = (): void => {
 </script>
 
 <style scoped lang="scss">
-@use '../styles/views/contatos.scss';
+
 </style>

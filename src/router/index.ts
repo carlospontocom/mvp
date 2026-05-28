@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ContatosView from '../views/ContatosView.vue'
 import LoginView from '../views/LoginView.vue'
 import CadastroView from '../views/CadastroView.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -24,7 +25,8 @@ const routes = [
     path: '/cadastro',
     name: 'Cadastro',
     component: CadastroView
-  }
+  },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
 const router = createRouter({

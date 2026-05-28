@@ -1,19 +1,33 @@
 <template>
-  <div class="home-view">
-    <div class="hero-section">
-      <input type="text" placeholder="Nome completo" v-model="nome" />
-      <span v-if="erroNome">{{ erroNome }}</span>
-    </div>
+  <section id="home" class="home-section">
+  <div class="container">
+    <h1>Agende seus Serviços Bancários com Facilidade</h1>
+    <p>
+      Diga adeus às filas e à espera interminável. Nosso sistema de 
+      <strong>agendamento bancário online</strong> permite que você escolha 
+      o melhor horário para ser atendido, garantindo praticidade e segurança 
+      em cada interação.
+    </p>
+    <p>
+      Seja para abertura de contas, consultoria financeira, renegociação de 
+      dívidas ou atendimento personalizado, oferecemos uma solução moderna 
+      que coloca você no controle da sua rotina bancária.
+    </p>
+    <p>
+      Com notificações automáticas e gestão inteligente de horários, 
+      seu tempo é valorizado e sua experiência bancária se torna muito 
+      mais eficiente.
+    </p>
+    <a href="#servicos" class="btn-primary">Agendar Atendimento</a>
   </div>
+</section>
+
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const nome = ref<string>('');
-const erroNome = ref<string>('');
-</script>
+ 
+ </script>
 
 <style scoped lang="scss">
-@use '../styles/views/home.scss';
+
 </style>
