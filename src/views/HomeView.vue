@@ -4,7 +4,7 @@
 
 <div>
   <h1>FAQ-Atendimento</h1>
-  <div class="tema">
+  <div class="temas">
     <span>perguntar.</span>
     <span>pesquisar.</span>
     <span>responder.</span>
