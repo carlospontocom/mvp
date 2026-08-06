@@ -22,13 +22,17 @@
   Agendar Atendimento
 </router-link>
 
+<div>
+  <LoginView/>
+</div>
+
   </div>
 </section>
 
 </template>
 
 <script setup lang="ts">
- 
+  import LoginView from '../views/LoginView.vue';
  </script>
 
 <style scoped lang="scss">
