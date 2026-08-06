@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="home-section">
+  <!-- <section id="home" class="home-section">
   <div class="container">
     <h1>Agende seus Serviços Bancários com Facilidade</h1>
     <p>
@@ -20,10 +20,18 @@
     </p>
     <router-link to="/contatos" class="btn-primary">
   Agendar Atendimento
-</router-link>
+</router-link> -->
 
 <div>
-  <LoginView/>xxxxxxxxxxxxxxxxxxxxxx
+  <h1>FAQ-Atendimento</h1>
+  <div class="tema">
+    <span>perguntar.</span>
+    <span>pesquisar.</span>
+    <span>responder.</span>
+    <span>atualizar.</span>
+    <span>apagar.</span>
+  </div>
+  <LoginView/> 
 </div>
 
   </div>
