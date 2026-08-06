@@ -3,7 +3,10 @@
     
 
 <div>
-  <h1>FAQ-Atendimento</h1>
+  <div class="logo">
+    <div class="top">FAQ-Atendimento</span>
+    <div class="bottom">Gestão SAC</div>
+  </div>
   <div class="temas">
     <span>perguntar.</span>
     <span>pesquisar.</span>
