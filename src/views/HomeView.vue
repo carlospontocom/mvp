@@ -23,7 +23,7 @@
 </router-link>
 
 <div>
-  <LoginView/>
+  <LoginView/>xxxxxxxxxxxxxxxxxxxxxx
 </div>
 
   </div>
