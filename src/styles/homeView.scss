@@ -1,3 +1,10 @@
+.aside-content{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 1.5rem;
+}
+
 .temas{
   display: flex;
   flex-direction: column;

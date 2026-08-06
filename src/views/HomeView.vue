@@ -2,10 +2,10 @@
  <section id="home" class="home-section">
     
 
-<div>
+<div class="aside-content">
   <div class="logo">
-    <div class="top">FAQ-Atendimento</span>
-    <div class="bottom">Gestão SAC</div>
+    <span class="top">FAQ-Atendimento</span>
+    <span class="bottom">Gestão SAC</span>
   </div>
   <div class="temas">
     <span>perguntar.</span>
