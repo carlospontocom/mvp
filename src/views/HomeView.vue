@@ -1,6 +1,6 @@
 <template>
-  <!-- <section id="home" class="home-section">
-  <div class="container">
+ <section id="home" class="home-section">
+    <!--<div class="container">
     <h1>Agende seus Serviços Bancários com Facilidade</h1>
     <p>
       Diga adeus às filas e à espera interminável. Nosso sistema de 
